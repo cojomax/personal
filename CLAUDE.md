@@ -9,7 +9,7 @@ work experience, qualifications, and personal projects.
 
 ## Coding Guidelines
 
-- Do not export types, interfaces or const variables unless or until another module needs to import them.
+- Do not export types, interfaces, or const variables unless or until another module needs to import them.
 
 ## Architecture
 
@@ -17,6 +17,7 @@ work experience, qualifications, and personal projects.
 - **Routing**: file-based, under `src/pages/` — each `.astro` file becomes a route.
 - **Layouts/components**: `src/layouts/Layout.astro` is the base HTML shell; page-level composition wraps components (e.g. `src/components/Welcome.astro`) in a layout, as in `src/pages/index.astro`.
 - **Assets**: static files served as-is from `public/`; imported/processed assets (optimized by Astro) live in `src/assets/`.
+- **Styles**: uses Tailwind CSS
 
 ## Commands
 
