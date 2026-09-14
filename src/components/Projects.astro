@@ -1,0 +1,103 @@
+---
+import { Icon } from "astro-icon/components";
+
+type ProjectStatus = "development" | "deployed" | "archived";
+
+const statusLabels: Record<ProjectStatus, string> = {
+  development: "In Development",
+  deployed: "Deployed",
+  archived: "Archived",
+};
+
+const statusStyles: Record<ProjectStatus, string> = {
+  development: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300",
+  deployed: "bg-primary-50 text-primary-700 dark:bg-primary-950 dark:text-primary-300",
+  archived: "bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400",
+};
+
+const projects: {
+  name: string;
+  description: string;
+  status: ProjectStatus;
+  tags: string[];
+  githubUrl: string;
+  websiteUrl?: string;
+}[] = [
+  {
+    name: "Old Speckled Men",
+    description: "TODO: add a short description of what this project does.",
+    status: "archived",
+    tags: ["Angular", "Typescript", "Firebase", "Firestore"],
+    githubUrl: "https://github.com/cojomax/osm",
+  },
+  {
+    name: "Porto Engineering",
+    description: "TODO: add a short description of what this project does.",
+    status: "development",
+    tags: ["Astro", "Cloudfare"],
+    githubUrl: "https://github.com/cojomax/porto-engineering",
+    websiteUrl: "https://porto-engineering.maxcuentas.workers.dev/",
+  },
+  {
+    name: "Personal Site",
+    description: "My personal website to showcase my experience, projects, and skills.",
+    status: "development",
+    tags: ["Astro", "Tailwind CSS", "Cloudfare"],
+    githubUrl: "https://github.com/cojomax/personal",
+  },
+];
+---
+
+<section id="projects" class="mx-auto max-w-4xl px-6 py-16">
+  <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">
+    Personal Projects
+  </h2>
+
+  <div class="mt-8 grid gap-6 sm:grid-cols-2">
+    {projects.map((project) => (
+      <div class="rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+        <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold text-neutral-900 dark:text-white">{project.name}</h3>
+          <span class={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${statusStyles[project.status]}`}>
+            {statusLabels[project.status]}
+          </span>
+        </div>
+
+        <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+          {project.description}
+        </p>
+
+        {project.tags.length > 0 && (
+          <div class="mt-4 flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span class="rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-3 py-1.5 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-400 hover:text-primary-600 dark:border-neutral-800 dark:text-neutral-300 dark:hover:border-primary-500 dark:hover:text-primary-400"
+          >
+            <Icon name="mdi:github" class="h-4 w-4" />
+          </a>
+          {project.websiteUrl && (
+            <a
+              href={project.websiteUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-3 py-1.5 text-sm font-medium text-neutral-700 transition-colors hover:border-primary-400 hover:text-primary-600 dark:border-neutral-800 dark:text-neutral-300 dark:hover:border-primary-500 dark:hover:text-primary-400"
+            >
+              <Icon name="mdi:open-in-new" class="h-4 w-4" />
+            </a>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

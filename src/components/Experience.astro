@@ -1,0 +1,109 @@
+---
+import { Icon } from "astro-icon/components";
+
+const jobs = [
+  {
+    role: "Lead IT Developer",
+    company: "BNP Paribas CIB APAC",
+    location: "Hong Kong",
+    period: "Aug 2024 — June 2026",
+    summary:
+      "Directed and implemented the rewrite and development of a BPMN-driven regulatory reporting workflow application.",
+    highlights: [
+      "Spearheaded the crucial stabilization of an Angular application through refactoring and bug fixing.",
+      "Significantly improved rendering performance with analysis using browser tools and library customizations.",
+      "Overhauled the application's architecture to improve scalability, maintainability, and reduce complexity.",
+      "Added many major features, maintaining a high standard of code quality, performance and reliability.",
+      "Upgraded libraries, dependencies, and frameworks to ensure security and performance optimization.",
+      "Proactively improved usability and user experience by adopting a user perspective for all feature implementations.",
+      "Set up testing with Jest (then Vitest) and CodeceptJS to ensure robust functionality and reduce regression risks.",
+      "Implemented modern development tools to enforce consistent code styles and guidelines, enhancing code quality and team collaboration.",
+      "Responsible for mentoring team members and driving the technical direction of the application.",
+    ],
+    languages: ["TypeScript", "JavaScript", "Java"],
+    techStack: ["Jenkins", "Oracle", "BPMN.io", "AG Grid"],
+  },
+  {
+    role: "Senior Software Engineer",
+    company: "Quantifeed HK Ltd",
+    location: "Hong Kong",
+    period: "Mar 2019 — Aug 2024",
+    summary:
+      "Developed and maintained a white-labelled portfolio management and administration application.",
+    highlights: [
+      "Developed robust components and services for an Angular library.",
+      "Implemented a configurable content security policy middleware for an ASP.NET Core web server.",
+      "Integrated the .NET back end with external institutions to provide direct debit authorization in the mobile client app.",
+      "Assisted with product direction by leveraging domain knowledge to provide code solutions, leading to efficient components and expedited feature delivery.",
+      "Gained experience with Microsoft Azure and DevOps by updating CI/CD configuration and performing maintenance in the development environment.",
+    ],
+    languages: ["TypeScript", "C#", "JavaScript"],
+    techStack: [".NET Core", "SQL Server", "Microsoft Azure", "DevOps", "Git", "Docker"],
+  },
+  {
+    role: "Software Engineer",
+    company: "Entelect",
+    location: "South Africa",
+    period: "May 2016 — Feb 2019",
+    summary:
+      "Developed, maintained, and tested REST APIs for an investment administration platform.",
+    highlights: [
+      "Implemented trading APIs for an asset management client using ASP.NET Core.",
+      "Performed upgrades and maintenance on a white-labelled onboarding application with a Node.js server.",
+      "Developed a POC MVC application to demonstrate a fund switch.",
+    ],
+    languages: ["C#", "JavaScript", "Java"],
+    techStack: [".NET Framework", "SQL Server", "MongoDB", "Node.js"],
+  },
+];
+---
+
+<section id="experience" class="mx-auto max-w-4xl px-6 py-16">
+  <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">
+    Work Experience
+  </h2>
+
+  <ol class="mt-8 space-y-12 border-l border-neutral-200 pl-6 dark:border-neutral-800">
+    {jobs.map((job) => (
+      <li class="relative">
+        <span class="absolute -left-[1.6rem] top-1.5 h-2.5 w-2.5 rounded-full bg-primary-600 dark:bg-primary-400"></span>
+
+        <div class="flex items-center gap-2">
+          <Icon name="mdi:briefcase-outline" class="h-5 w-5 shrink-0 text-primary-600 dark:text-primary-400" />
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">{job.role}</h3>
+        </div>
+
+        <div class="mt-2 space-y-1 text-sm text-neutral-500 dark:text-neutral-400">
+          <div class="flex items-center gap-2">
+            <Icon name="mdi:domain" class="h-4 w-4 shrink-0" />
+            <span>{job.company}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="mdi:map-marker-outline" class="h-4 w-4 shrink-0" />
+            <span>{job.location}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="mdi:calendar-month-outline" class="h-4 w-4 shrink-0" />
+            <span>{job.period}</span>
+          </div>
+        </div>
+
+        <p class="mt-3 text-neutral-600 dark:text-neutral-400">{job.summary}</p>
+
+        <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm text-neutral-600 dark:text-neutral-400">
+          {job.highlights.map((highlight) => (
+            <li>{highlight}</li>
+          ))}
+        </ul>
+
+        <div class="mt-3 flex flex-wrap gap-2">
+          {[...job.languages, ...job.techStack].map((tag) => (
+            <span class="rounded-full bg-primary-50 px-3 py-1 text-sm font-medium text-primary-700 dark:bg-primary-950 dark:text-primary-300">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </li>
+    ))}
+  </ol>
+</section>

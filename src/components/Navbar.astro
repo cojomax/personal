@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon/components";
+
+const navItems = [
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+];
+
+const socials = [
+  { label: "GitHub", href: "https://github.com/cojomax", icon: "mdi:github" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/max-cobbett/", icon: "mdi:linkedin" },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-neutral-200/80 bg-white/80 backdrop-blur dark:border-neutral-800/80 dark:bg-neutral-950/80">
+  <div class="mx-auto flex max-w-4xl items-center gap-4 px-6 py-4">
+    <div class="flex-1"></div>
+
+    <nav class="flex flex-1 justify-center gap-6 text-sm font-medium whitespace-nowrap">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="text-neutral-600 transition-colors hover:text-primary-600 dark:text-neutral-300 dark:hover:text-primary-400"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex flex-1 justify-end gap-4">
+      {socials.map((social) => (
+        <a
+          href={social.href}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={social.label}
+          class="text-neutral-600 transition-colors hover:text-primary-600 dark:text-neutral-300 dark:hover:text-primary-400"
+        >
+          <Icon name={social.icon} class="h-5 w-5" />
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
