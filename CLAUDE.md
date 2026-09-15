@@ -11,6 +11,11 @@ work experience, qualifications, and personal projects.
 
 - Do not export types, interfaces, or const variables unless or until another module needs to import them.
 
+## Theme & Style
+
+- Use Tailwind CSS.
+- The app supports a light and a dark mode.
+
 ## Architecture
 
 - **Cloudflare adapter**: `astro.config.mjs` sets `adapter: cloudflare()`, so `pnpm build` produces a Cloudflare Worker (entrypoint `@astrojs/cloudflare/entrypoints/server`), not a static site or Node server. `wrangler.jsonc` configures the Worker (name, static assets binding pointing at `./dist`, compatibility date/flags). Any Cloudflare bindings (KV, D1, R2, env vars, etc.) get added to `wrangler.jsonc`, and `pnpm generate-types` must be rerun so `worker-configuration.d.ts` (included in `tsconfig.json`) reflects them.
