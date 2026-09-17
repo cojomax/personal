@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 /*
+ * Switch dark: variants from the default prefers-color-scheme media query
+ * to a `.dark` class on <html>, so dark mode can be toggled manually (see
+ * the theme-init script in Layout.astro and the toggle button in
+ * Navbar.astro) while still defaulting to the visitor's system preference.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
  * Semantic "primary" color, aliased to Tailwind's violet scale so the
  * whole site can be re-themed later by changing this block alone.
  */

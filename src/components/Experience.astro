@@ -20,8 +20,7 @@ const jobs = [
       "Implemented modern development tools to enforce consistent code styles and guidelines, enhancing code quality and team collaboration.",
       "Responsible for mentoring team members and driving the technical direction of the application.",
     ],
-    languages: ["TypeScript", "JavaScript", "Java"],
-    techStack: ["Jenkins", "Oracle", "BPMN.io", "AG Grid"],
+    tags: ["TypeScript", "Angular", "JavaScript", "Vitest", "AG Grid", "BPMN.io", "Jenkins", "Oracle", "CodeceptJS"],
   },
   {
     role: "Senior Software Engineer",
@@ -37,8 +36,7 @@ const jobs = [
       "Assisted with product direction by leveraging domain knowledge to provide code solutions, leading to efficient components and expedited feature delivery.",
       "Gained experience with Microsoft Azure and DevOps by updating CI/CD configuration and performing maintenance in the development environment.",
     ],
-    languages: ["TypeScript", "C#", "JavaScript"],
-    techStack: [".NET Core", "SQL Server", "Microsoft Azure", "DevOps", "Git", "Docker"],
+    tags: ["TypeScript", "C#", "Angular", "JavaScript", ".NET Core", "SQL Server", "Microsoft Azure", "Azure DevOps", "Docker"],
   },
   {
     role: "Software Engineer",
@@ -52,8 +50,7 @@ const jobs = [
       "Performed upgrades and maintenance on a white-labelled onboarding application with a Node.js server.",
       "Developed a POC MVC application to demonstrate a fund switch.",
     ],
-    languages: ["C#", "JavaScript", "Java"],
-    techStack: [".NET Framework", "SQL Server", "MongoDB", "Node.js"],
+    tags: ["C#", "JavaScript", "SQL Server", ".NET Framework", "MongoDB", "Node.js"],
   },
 ];
 ---
@@ -97,7 +94,7 @@ const jobs = [
         </ul>
 
         <div class="mt-3 flex flex-wrap gap-2">
-          {[...job.languages, ...job.techStack].map((tag) => (
+          {job.tags.map((tag) => (
             <span class="rounded-full bg-primary-50 px-3 py-1 text-sm font-medium text-primary-700 dark:bg-primary-950 dark:text-primary-300">
               {tag}
             </span>
