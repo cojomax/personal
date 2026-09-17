@@ -1,0 +1,51 @@
+---
+import { Icon } from "astro-icon/components";
+
+const highlights = [
+  {
+    icon: "mdi:cog-refresh-outline",
+    title: "Systems Modernization & Technical Ownership",
+    description:
+      "Replaced the core workflow-processing engine of a regulatory-reporting platform at BNP Paribas, building on earlier experience as the sole developer who migrated a large portfolio application from AngularJS to Angular.",
+  },
+  {
+    icon: "mdi:speedometer",
+    title: "Performance Engineering",
+    description:
+      "Profiled and rebuilt a properties panel's rendering path at BNP Paribas, improving performance by over 400% through targeted browser-level profiling.",
+  },
+  {
+    icon: 'mdi:puzzle-outline',
+    title: 'Frontend Architecture at Scale',
+    description: 'Built reusable Angular library components adopted across 15+ white-labelled client deployments at Quantifeed.',
+  },
+  {
+    icon: "mdi:sitemap",
+    title: "Algorithms & Data Processing in Production",
+    description:
+      "Implemented a depth-first search traversal for workflow/graph processing to speed up execution, and rebuilt a JSON-in-XML sanitization pipeline that cut parsing errors to effectively zero.",
+  },
+  {
+    icon: "mdi:bank-outline",
+    title: "Backend Systems for Financial Institutions",
+    description:
+      "Built trading and asset-management APIs for Investec's investment platform, and later delivered a direct-debit authorization integration spanning 3-4 partner institutions for a mobile banking client.",
+  }
+];
+---
+
+<section id="highlights" class="mx-auto max-w-4xl px-6 py-16">
+  <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">
+    Impact
+  </h2>
+
+  <div class="mt-8 grid gap-6 sm:grid-cols-2">
+    {highlights.map((item) => (
+      <div class="rounded-xl border border-neutral-200 p-5 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-[0_10px_20px_-12px_rgba(124,58,237,0.25)] dark:border-neutral-800 dark:shadow-none dark:hover:border-primary-700 dark:hover:shadow-[0_10px_20px_-12px_rgba(167,139,250,0.15)]">
+        <Icon name={item.icon} class="h-6 w-6 text-primary-600 dark:text-primary-400" />
+        <h3 class="mt-3 font-semibold text-neutral-900 dark:text-white">{item.title}</h3>
+        <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">{item.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
