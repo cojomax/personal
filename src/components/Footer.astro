@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+
+const email = "";
+const currentYear = new Date().getFullYear();
+
+const socials = [
+  { label: "GitHub", href: "https://github.com/cojomax", icon: "mdi:github" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/max-cobbett/", icon: "mdi:linkedin" },
+];
+---
+
+<footer class="border-t border-neutral-200/80 bg-stone-50/80 dark:border-neutral-800/80 dark:bg-stone-900/80">
+  <div class="mx-auto flex max-w-4xl flex-col items-center gap-6 px-6 py-10 text-center">
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a
+        href={`mailto:${email}`}
+        class="rounded-full bg-primary-600 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-500"
+      >
+        Email me
+      </a>
+
+      <a
+        href="/Max_Cobbett.pdf"
+        download
+        class="rounded-full border border-neutral-200 px-5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:border-primary-400 hover:text-primary-600 dark:border-neutral-800 dark:text-neutral-300 dark:hover:border-primary-500 dark:hover:text-primary-400"
+      >
+        Download resume
+      </a>
+
+      <div class="flex items-center gap-4">
+        {socials.map((social) => (
+          <a
+            href={social.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={social.label}
+            class="text-neutral-600 transition-colors hover:text-primary-600 dark:text-neutral-300 dark:hover:text-primary-400"
+          >
+            <Icon name={social.icon} class="h-5 w-5" />
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">Based in GMT+2</p>
+
+    <p class="text-xs text-neutral-400 dark:text-neutral-500">
+      &copy; {currentYear} Max Cobbett. All rights reserved.
+    </p>
+  </div>
+</footer>
