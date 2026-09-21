@@ -7,10 +7,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a personal website for Max Cobbett. It is a public-facing profile of his career and work. It will showcase his
 work experience, qualifications, and personal projects.
 
-## Instructions
-
-- Do not commit anything automatically.
-
 ## Coding Guidelines
 
 - Do not export types, interfaces, or const variables unless or until another module needs to import them.
@@ -48,3 +44,7 @@ astro dev --background
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
 There is no test suite or linter configured in this repo yet.
+
+## Behaviour
+
+- When assigned a coding task, make the changes on the current I have checked out and do not commit anything.
