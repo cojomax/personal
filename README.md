@@ -52,7 +52,3 @@ pnpm preview               # preview the Cloudflare build locally (via wrangler)
 pnpm astro check           # type-check .astro files
 pnpm generate-types        # regenerate worker-configuration.d.ts from wrangler.jsonc
 ```
-
-## Status
-
-Structure and content derived from an existing CV. Updates coming soon. 
