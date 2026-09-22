@@ -47,4 +47,4 @@ There is no test suite or linter configured in this repo yet.
 
 ## Behaviour
 
-- When assigned a coding task, make the changes on the current I have checked out and do not commit anything.
+- When assigned a coding task, make the changes on the current branch I have checked out and do not commit anything.
