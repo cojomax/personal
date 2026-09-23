@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a personal website for Max Cobbett. It is a public-facing profile of his career and work. It will showcase his
 work experience, qualifications, and personal projects.
 
-## Coding Guidelines
+## Code Style
 
 - Do not export types, interfaces, or const variables unless or until another module needs to import them.
 
@@ -15,6 +15,10 @@ work experience, qualifications, and personal projects.
 
 - Use Tailwind CSS.
 - The app supports a light and a dark mode.
+
+## Behaviour
+
+- When assigned a coding task, make the changes on the current branch I have checked out and do not commit anything.
 
 ## Architecture
 
@@ -44,7 +48,3 @@ astro dev --background
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
 There is no test suite or linter configured in this repo yet.
-
-## Behaviour
-
-- When assigned a coding task, make the changes on the current branch I have checked out and do not commit anything.
