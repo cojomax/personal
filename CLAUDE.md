@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project
+## Project Description
 
 This is a personal website for Max Cobbett. It is a public-facing profile of his career and work. It will showcase his
 work experience, qualifications, and personal projects.
@@ -11,7 +11,7 @@ work experience, qualifications, and personal projects.
 
 - Do not export types, interfaces, or const variables unless or until another module needs to import them.
 
-## Theme & Style
+## Theme & Styling
 
 - Use Tailwind CSS.
 - The app supports a light and a dark mode.
