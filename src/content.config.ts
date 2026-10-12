@@ -10,6 +10,7 @@ const experience = defineCollection({
     location: z.string(),
     period: z.string(),
     summary: z.string(),
+    hasWriteUp: z.boolean(),
     tags: z.array(z.string()),
     order: z.number(),
   }),

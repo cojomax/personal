@@ -3,20 +3,21 @@ role: "Lead IT Developer"
 company: "BNP Paribas CIB APAC"
 location: "Hong Kong"
 period: "Aug 2024 — June 2026"
-summary: "Directed the stabilization and rewrite of a BPMN-driven regulatory reporting platform used by BNP staff across
-10+ APAC regions. Users design workflows — built from around 80 custom bpmn-js templates — that extract, transform, and
-aggregate local financial data into regulatory reports, while also managing and editing large Excel submissions online.
-Inherited a fragile, untyped codebase riddled with unhandled exceptions, and led the effort to add proper typing, a real
-API layer, coherent error handling, and an event system to make the design module reliable."
-tags: ["Angular", "TypeScript", "JavaScript", "Vitest", "AG Grid", "BPMN.io", "Jenkins", "Oracle", "CodeceptJS"]
 order: 1
+hasWriteUp: true
+summary: "Led the frontend of an internal platform used by 50-100 staff across 10+ APAC regions to build and run
+regulatory financial reports. The centerpiece was a BPMN workflow designer, which I inherited in a fragile state:
+frequent crashes, slow rendering, and an execution engine with no concurrency. I rebuilt the engine around a
+concurrency-limited request bus, cut the properties panel’s load time from 4-6 seconds to milliseconds, and replaced a
+recurring JSON-parsing bug with a redesigned pipeline, while mentoring a team of 2-3 engineers and bringing in typed,
+tested, and documented code."
+tags: ["Angular", "TypeScript", "JavaScript", "Vitest", "AG Grid", "BPMN.io", "Jenkins", "Oracle", "CodeceptJS"]
 ---
 
 ### The Goal
 
 Build a platform for internal staff in 10+ APAC regions that helps users design, build, and test workflows that are used
 to produce financial regulatory reports.
-
 
 ### My Role
  
